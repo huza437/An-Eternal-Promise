@@ -111,7 +111,7 @@ export default function BalloonsScreen({ onNext }) {
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          There's more I want to show you...
+          Poison Me But Do Not Friendzone Me! Jaan
         </motion.p>
 
         <motion.button
@@ -122,7 +122,7 @@ export default function BalloonsScreen({ onNext }) {
           }}
         >
           <Heart className="w-5 h-5 mr-2 fill-current" />
-          Continue
+          Lup Ev Too 🌸
           <ArrowRight className="w-5 h-5 ml-2" />
         </motion.button>
       </motion.div>

@@ -72,7 +72,7 @@ export default function CuteLoader({ onComplete }) {
                 transition={{ delay: 2, duration: 0.6 }}
                 className="mt-6 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-full pulse-glow transition-all duration-300 hover:scale-105 shadow-lg"
             >
-                Continue →
+                Moving Together 🌸 →
             </motion.button>
 
         </motion.div>

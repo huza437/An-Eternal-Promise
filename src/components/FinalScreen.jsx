@@ -12,18 +12,46 @@ export default function FinalScreen() {
   const [showOverlay, setShowOverlay] = useState(false)
   const messageRef = useRef(null)
 
-  const proposalMessage = `From the moment you came into my life, everything started to change.  
-You brought colors to my ordinary days, warmth to my silence, and a happiness I didn’t even know I was missing.  
+  const proposalMessage = `I never planned for this.
+I never expected someone to arrive
+and quietly rearrange my inner world.
+But you did.
 
-Every sunrise feels brighter because of you.  
-Every dream feels possible because you inspire me.  
-Every challenge feels easier because I imagine you by my side.  
+You stepped into my life without noise,
+and somehow everything softened.
+With you, happiness isn’t loud.
+It’s subtle.
+It’s in small thoughts,
+in unspoken smiles,
+in moments that feel complete
+even when nothing extraordinary is happening.
 
-You are not just my friend, you’re the most special part of my life.  
-You make me smile, you make my heart race, and you make me want to be a better version of myself.  
+You make ordinary things feel meaningful.
+You make effort feel natural.
+You make me want to protect what I feel,
+not rush it, not misuse it,
+just keep it safe.
 
-I don’t know what the future holds, but I know one thing for sure.
-I want that future with you.`
+I don’t love you recklessly.
+I love you carefully.
+With intention.
+With loyalty.
+With the kind of patience that stays
+even when words fall short.
+
+I don’t promise perfection.
+I don’t promise ease.
+But I promise presence.
+I promise honesty.
+And I promise a heart that chooses you
+again and again,
+even on days when choosing is hard.
+
+If love is meant to be a place,
+then mine is here —
+standing quietly beside you,
+ready to face whatever comes,
+as long as it’s with you.`
 
   useEffect(() => {
     if (cardOpen && !typingComplete) {
@@ -264,12 +292,13 @@ I want that future with you.`
               transition={{ delay: 2.5, duration: 1 }}
             >
               <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-2 leading-tight">
-                Let's make it worth it...
+                Let's make it worth it... Forever
               </h1>
               <motion.p
                 className="text-3xl md:text-4xl text-pink-300 font-semibold"
               >
-                Forever✨
+               Forever Yours <br />
+               @ sAiMa_hUzAiF ✨
               </motion.p>
             </motion.div>
           </motion.div>
