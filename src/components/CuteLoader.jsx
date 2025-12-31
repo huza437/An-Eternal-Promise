@@ -1,19 +1,19 @@
 import { motion } from "motion/react"
 
-export default function CuteLoader() {
+export default function CuteLoader({ onComplete }) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="min-h-screen bg-gradient-to-br from-fuchsia-950/5 to-rose-950/10 flex flex-col gap-10 items-center justify-center relative p-4">
-            <div
-                className="panda-container  z-1">
+            className="min-h-screen bg-gradient-to-br from-fuchsia-950/5 to-rose-950/10 flex flex-col gap-10 items-center justify-center relative p-4"
+        >
+            <div className="panda-container z-1">
                 <div className='relative'>
                     <div className="ear ear-left"></div>
                     <div className="ear ear-right"></div>
-                    <div className="panda-head ">
+                    <div className="panda-head">
                         <div className="eye-patch eye-patch-left"></div>
                         <div className="eye-patch eye-patch-right"></div>
                         <div className="eye eye-left">
@@ -61,7 +61,18 @@ export default function CuteLoader() {
                     />
                 ))}
             </motion.div>
-        </motion.div>
 
+            {/* 🌸 NEW: Continue Button (appears gently) */}
+            <motion.button
+                onClick={onComplete}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 2, duration: 0.6 }}
+                className="mt-6 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold rounded-full pulse-glow transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+                Continue →
+            </motion.button>
+
+        </motion.div>
     )
 }

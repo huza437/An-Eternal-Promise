@@ -14,14 +14,6 @@ export default function ProposalSite() {
   const [currentScreen, setCurrentScreen] = useState("newyear")
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-      setCurrentScreen("first")
-    }, 3000)
-
-    return () => clearTimeout(timer)
-  }, [])
 
   const nextScreen = (screen) => {
     setCurrentScreen(screen)
@@ -43,15 +35,13 @@ export default function ProposalSite() {
 
         {isLoading && <CuteLoader key="loader" onComplete={() => setCurrentScreen("first")} />}
 
-       {currentScreen === "first" && (
-  <FirstScreen
-    key="first"
-    onNext={() => {
-      window.startMusic();     // 🎵 START MUSIC HERE
-      nextScreen("question1");
-    }}
+{currentScreen === "loader" && (
+  <CuteLoader
+    key="loader"
+    onComplete={() => setCurrentScreen("first")}
   />
 )}
+
 
         {currentScreen === "question1" && (
           <QuestionScreen
