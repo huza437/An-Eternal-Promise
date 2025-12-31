@@ -1,6 +1,6 @@
 "use client"
   
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import NewYearScreen from "@/components/NewYearScreen";
 import FirstScreen from "@/components/FirstScreen"
@@ -12,7 +12,7 @@ import CuteLoader from "@/components/CuteLoader"
 
 export default function ProposalSite() {
   const [currentScreen, setCurrentScreen] = useState("newyear")
-  const [isLoading, setIsLoading] = useState(true)
+  
 
 
   const nextScreen = (screen) => {
@@ -22,51 +22,68 @@ export default function ProposalSite() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-fuchsia-950/30 via-black/70 to-rose-950/40 relative overflow-hidden">
 
-      <AnimatePresence mode="wait">
-        {currentScreen === "newyear" && (
-  <NewYearScreen
-    key="newyear"
-    onNext={() => {
-      window.startMusic();      // 🎵 music starts here
-      nextScreen("loader");     // continues into your existing flow
-    }}
-  />
-)}
+    <AnimatePresence mode="wait">
 
-        {isLoading && <CuteLoader key="loader" onComplete={() => setCurrentScreen("first")} />}
+  {currentScreen === "newyear" && (
+    <NewYearScreen
+      key="newyear"
+      onNext={() => {
+        window.startMusic();
+        nextScreen("loader");
+      }}
+    />
+  )}
 
-{currentScreen === "loader" && (
-  <CuteLoader
-    key="loader"
-    onComplete={() => setCurrentScreen("first")}
-  />
-)}
+  {currentScreen === "loader" && (
+    <CuteLoader
+      key="loader"
+      onComplete={() => setCurrentScreen("first")}
+    />
+  )}
 
+  {currentScreen === "first" && (
+    <FirstScreen
+      key="first"
+      onNext={() => nextScreen("question1")}
+    />
+  )}
 
-        {currentScreen === "question1" && (
-          <QuestionScreen
-            key="question1"
-            question="Do you like surprises?"
-            onYes={() => nextScreen("question2")}
-            isFirst={true}
-          />
-        )}
+  {currentScreen === "question1" && (
+    <QuestionScreen
+      key="question1"
+      question="Do you like surprises?"
+      onYes={() => nextScreen("question2")}
+      isFirst={true}
+    />
+  )}
 
-        {currentScreen === "question2" && (
-          <QuestionScreen
-            key="question2"
-            question="Do you like me?"
-            onYes={() => nextScreen("balloons")}
-            isFirst={false}
-          />
-        )}
+  {currentScreen === "question2" && (
+    <QuestionScreen
+      key="question2"
+      question="Do you like me?"
+      onYes={() => nextScreen("balloons")}
+      isFirst={false}
+    />
+  )}
 
-        {currentScreen === "balloons" && <BalloonsScreen key="balloons" onNext={() => nextScreen("photos")} />}
+  {currentScreen === "balloons" && (
+    <BalloonsScreen
+      key="balloons"
+      onNext={() => nextScreen("photos")}
+    />
+  )}
 
-        {currentScreen === "photos" && <PhotoScreen key="photos" onNext={() => nextScreen("final")} />}
+  {currentScreen === "photos" && (
+    <PhotoScreen
+      key="photos"
+      onNext={() => nextScreen("final")}
+    />
+  )}
 
-        {currentScreen === "final" && <FinalScreen key="final" />}
-      </AnimatePresence>
+  {currentScreen === "final" && <FinalScreen key="final" />}
+
+</AnimatePresence>
+
 
       {/* Watermark */}
       <motion.div
