@@ -6,7 +6,6 @@ With soft animations, heartfelt messages, and an elegant UI, this site turns a s
 > ⚠️ This is a **free version**, so some features like background music, some animations are not included. Premium version includes all features.
 > You can **buy the premium code** from my store [here](https://www.anujbuilds.in/products/proposal-site).
 
----
 
 ## 🛠 Tech Stack
 

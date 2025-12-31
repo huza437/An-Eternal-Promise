@@ -32,7 +32,15 @@ export default function ProposalSite() {
       <AnimatePresence mode="wait">
         {isLoading && <CuteLoader key="loader" onComplete={() => setCurrentScreen("first")} />}
 
-        {currentScreen === "first" && <FirstScreen key="first" onNext={() => nextScreen("question1")} />}
+       {currentScreen === "first" && (
+  <FirstScreen
+    key="first"
+    onNext={() => {
+      window.startMusic();     // 🎵 START MUSIC HERE
+      nextScreen("question1");
+    }}
+  />
+)}
 
         {currentScreen === "question1" && (
           <QuestionScreen
