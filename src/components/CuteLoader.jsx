@@ -36,7 +36,9 @@ export default function CuteLoader({ onComplete }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
             >
-                Something special is coming...
+                Something special is coming...<br />
+            Lets witness everything together<br />
+            May we love till Eternity SaimZgeniE !!
             </motion.h2>
 
             <motion.div
