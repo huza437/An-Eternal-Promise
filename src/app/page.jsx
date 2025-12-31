@@ -2,6 +2,7 @@
   
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
+import NewYearScreen from "@/components/NewYearScreen";
 import FirstScreen from "@/components/FirstScreen"
 import QuestionScreen from "@/components/QuestionScreen"
 import BalloonsScreen from "@/components/BalloonsScreen"
@@ -10,7 +11,7 @@ import FinalScreen from "@/components/FinalScreen"
 import CuteLoader from "@/components/CuteLoader"
 
 export default function ProposalSite() {
-  const [currentScreen, setCurrentScreen] = useState("loader")
+  const [currentScreen, setCurrentScreen] = useState("newyear")
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -30,6 +31,16 @@ export default function ProposalSite() {
     <div className="min-h-screen bg-gradient-to-br from-fuchsia-950/30 via-black/70 to-rose-950/40 relative overflow-hidden">
 
       <AnimatePresence mode="wait">
+        {currentScreen === "newyear" && (
+  <NewYearScreen
+    key="newyear"
+    onNext={() => {
+      window.startMusic();      // 🎵 music starts here
+      nextScreen("loader");     // continues into your existing flow
+    }}
+  />
+)}
+
         {isLoading && <CuteLoader key="loader" onComplete={() => setCurrentScreen("first")} />}
 
        {currentScreen === "first" && (
